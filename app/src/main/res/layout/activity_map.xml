@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:layout_marginStart="4dp">
+
+        <!-- Sección izquierda para MapView -->
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/mapView"
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true" />
+
+        <!-- Sección derecha para mostrar datos -->
+        <LinearLayout
+            android:id="@+id/dataLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:orientation="vertical"
+            android:layout_marginStart="4dp">
+
+            <!-- Agrega aquí los componentes para mostrar los datos -->
+            <TextView
+                android:id="@+id/textViewPDV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PDV: "
+                android:textSize="16sp"
+                android:layout_marginTop="16dp"/>
+
+            <TextView
+                android:id="@+id/textViewFecha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fecha: "
+                android:textSize="16sp"
+                android:layout_marginTop="16dp"/>
+
+            <TextView
+                android:id="@+id/textViewHora"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hora: "
+                android:textSize="16sp"
+                android:layout_marginTop="16dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <!-- Botón para ejecutar el API -->
+    <Button
+        android:id="@+id/btnEjecutarApi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Registrar"
+        android:textColor="?android:textColorPrimary"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"/>
+    <!-- Botón para ejecutar el API -->
+    <Button
+        android:id="@+id/btnSalirApi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Salir PDV"
+        android:visibility="gone"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="150dp"/>
+
+</RelativeLayout>

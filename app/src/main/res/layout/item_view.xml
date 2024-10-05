@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="?android:attr/selectableItemBackground"
+    android:elevation="4dp"
+    android:layout_margin="8dp"
+    android:backgroundTint="?attr/colorSurface">
+
+    <LinearLayout
+        android:id="@+id/rutaLl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="5dp"
+        android:background="#CCCCCC">
+
+        <!-- Icon -->
+        <ImageView
+            android:id="@+id/iconRuta"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_ruta"
+            android:layout_gravity="center"
+            android:padding="5dp"
+            app:tint="@color/app" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ACACAC"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/textViewNombre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Punto de Venta:"
+                android:textStyle="bold"
+                android:textColor="?android:textColorPrimary"
+                android:textSize="20sp"
+                android:layout_marginBottom="4dp" />
+
+            <!-- Title -->
+            <TextView
+                android:id="@+id/textViewFecha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fecha:"
+                android:textColor="?android:textColorSecondary"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

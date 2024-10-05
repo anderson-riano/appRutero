@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation.xml"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.rutero.rutero.ui.home.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_calendario"
+        android:name="com.rutero.rutero.ui.calendario.CalendarioFragment"
+        android:label="Ruta"
+        tools:layout="@layout/fragment_calendario" >
+        <action
+            android:id="@+id/actionMapFragment"
+            app:destination="@id/mapFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.rutero.rutero.ui.calendario.MapFragment"
+        android:label="Ingresar a Punto de Venta"
+        tools:layout="@layout/fragment_map" />
+
+</navigation>

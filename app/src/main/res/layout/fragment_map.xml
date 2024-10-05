@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- MapView section -->
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/white"
+        android:elevation="4dp" />
+
+    <!-- Data section -->
+    <LinearLayout
+        android:id="@+id/dataLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="?attr/colorSurface"
+        android:elevation="2dp"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:id="@+id/textViewPDV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Punto de Venta: "
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="?android:textColorPrimary"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/textViewFecha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fecha: "
+            android:textSize="16sp"
+            android:textColor="?android:textColorSecondary"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/textViewHora"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hora: "
+            android:textSize="16sp"
+            android:textColor="?android:textColorSecondary"
+            android:layout_marginBottom="16dp" />
+    </LinearLayout>
+
+    <!-- Button section -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnEjecutarApi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ingresar"
+        android:textColor="?android:textColorPrimary"
+        android:layout_gravity="center"
+        app:backgroundTint="@color/app"
+        app:icon="@drawable/ic_visita"
+        app:iconGravity="textStart"
+        app:iconPadding="8dp"
+        app:iconSize="24dp"
+        app:iconTint="?android:textColorPrimary" />
+
+</LinearLayout>
