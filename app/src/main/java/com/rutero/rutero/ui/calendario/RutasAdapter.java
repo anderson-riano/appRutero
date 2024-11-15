@@ -2,12 +2,15 @@ package com.rutero.rutero.ui.calendario;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.PorterDuff;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -26,7 +29,7 @@ import roboguice.inject.RoboInjector;
 public class RutasAdapter extends RecyclerView.Adapter<RutasAdapter.RutaViewHolder> {
 
     private List<Ruta> rutas;
-    private Context context;
+    private static Context context;
     private Usuario usuario;
 
     @Inject
@@ -56,11 +59,13 @@ public class RutasAdapter extends RecyclerView.Adapter<RutasAdapter.RutaViewHold
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Abrir la MapActivity cuando se haga clic en un elemento
-                usuario.setRuta(ruta);
-                usuarioManager.actualizar(usuario);
+//                if (ruta.getEstadoRutaId() == 1) {
+                    // Abrir la MapActivity cuando se haga clic en un elemento
+                    usuario.setRuta(ruta);
+                    usuarioManager.actualizar(usuario);
 
-                Navigation.findNavController(v).navigate(R.id.actionMapFragment);
+                    Navigation.findNavController(v).navigate(R.id.actionMapFragment);
+//                }
             }
         });
     }
@@ -71,17 +76,24 @@ public class RutasAdapter extends RecyclerView.Adapter<RutasAdapter.RutaViewHold
     }
 
     public static class RutaViewHolder extends RecyclerView.ViewHolder {
+        private ImageView iconRuta;
         private TextView textViewNombre;
         private TextView textViewFecha;
 
         public RutaViewHolder(@NonNull View itemView) {
             super(itemView);
+            iconRuta = itemView.findViewById(R.id.iconRuta);
             textViewNombre = itemView.findViewById(R.id.textViewNombre);
             textViewFecha = itemView.findViewById(R.id.textViewFecha);
         }
 
         public void bind(Ruta ruta) {
             String estado = (ruta.getEstadoRutaId() == 1) ? "Sin Visitar - " : "Visitado - ";
+
+            // Apply tint using the color resource
+            int color = ContextCompat.getColor(context, ((ruta.getEstadoRutaId() == 1) ? R.color.app : R.color.teal_700));
+            iconRuta.setColorFilter(color, PorterDuff.Mode.SRC_IN);
+
             textViewNombre.setText(estado + ruta.getNombre());
             textViewFecha.setText(ruta.getFechaVisita() + " " + ruta.getHoraIngreso());
         }

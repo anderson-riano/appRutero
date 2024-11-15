@@ -65,6 +65,10 @@ public class BaseMenuActivity extends RoboAppCompatActivity {
             Menu navMenu = navigationView.getMenu();
             MenuItem rutaItem = navMenu.findItem(R.id.nav_calendario);
             rutaItem.setVisible(false); // This hides the item
+        } else {
+            Menu navMenu = navigationView.getMenu();
+            MenuItem rutaItem = navMenu.findItem(R.id.nav_stock_producto);
+            rutaItem.setVisible(false); // This hides the item
         }
 
         // Hide the nav_cerrar_sesion item
@@ -79,6 +83,8 @@ public class BaseMenuActivity extends RoboAppCompatActivity {
                     navController.navigate(R.id.nav_home);
                 } else if (id == R.id.nav_calendario) {
                     navController.navigate(R.id.nav_calendario);
+                } else if (id == R.id.nav_stock_producto) {
+                    navController.navigate(R.id.nav_stock_producto);
                 } else if (id == R.id.nav_cerrar_sesion) {
                     usuarioManager.eliminarTodo();
                     Intent i = new Intent(BaseMenuActivity.this, MainActivity.class);

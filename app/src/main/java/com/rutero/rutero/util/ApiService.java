@@ -1,5 +1,7 @@
 package com.rutero.rutero.util;
 
+import com.rutero.rutero.data.model.producto.Producto;
+import com.rutero.rutero.data.model.producto.ProductoResponse;
 import com.rutero.rutero.data.model.usuario.Usuario;
 import com.rutero.rutero.data.model.usuario.UsuarioResponse;
 import com.rutero.rutero.data.model.ruta.RegistroRuta;
@@ -27,4 +29,10 @@ public interface ApiService {
 
     @POST("app-set-out-rutas")
     Call<ApiResponse> setOutRegistroRuta(@Query("token") String token, @Body RegistroRuta registroRuta);
+
+    @GET("app-get-productos")
+    Call<ApiResponse<ProductoResponse>> getProductos(@Query("token") String token, @Query("pdvId") int pdvId);
+
+    @POST("app-set-productos")
+    Call<ApiResponse> setRegistroProducto(@Query("token") String token, @Body Producto producto);
 }

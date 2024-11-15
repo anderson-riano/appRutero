@@ -20,6 +20,7 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="menu_home">Inicio</string>
     <string name="menu_calendario">Ruta</string>
+    <string name="menu_stock_producto">Stock Producto</string>
     <string name="ayuda">Ayuda</string>
     <string name="menu_formulario">Formulario</string>
     <string name="cerrar_sesion">Cerrar Sesion</string>

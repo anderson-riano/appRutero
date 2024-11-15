@@ -27,4 +27,10 @@
         android:label="Ingresar a Punto de Venta"
         tools:layout="@layout/fragment_map" />
 
+    <fragment
+        android:id="@+id/nav_stock_producto"
+        android:name="com.rutero.rutero.ui.stockProducto.StockProductoFragment"
+        android:label="Stock Producto"
+        tools:layout="@layout/fragment_stock_producto" />
+
 </navigation>

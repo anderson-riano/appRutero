@@ -23,7 +23,7 @@ import com.rutero.rutero.data.model.usuario.Usuario;
 public class BaseDeDatosHelper extends OrmLiteSqliteOpenHelper {
 
     private static final String DATABASE_NAME = "ruteroBdSql.db";
-    private static final int DATABASE_VERSION = 3;
+    private static final int DATABASE_VERSION = 4;
     private static BaseDeDatosHelper instance;
 
     /** Fuente de la conexión **/

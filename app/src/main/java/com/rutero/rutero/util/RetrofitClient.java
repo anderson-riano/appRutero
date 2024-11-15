@@ -11,7 +11,7 @@ import okhttp3.logging.HttpLoggingInterceptor;
 public class RetrofitClient {
 
     private static Retrofit retrofit;
-    private static final String BASE_URL = "http://34.23.54.208:8000/";
+    private static final String BASE_URL = "http://10.0.2.2:85/";
 
     public static Retrofit getRetrofitInstance() {
         if (retrofit == null) {

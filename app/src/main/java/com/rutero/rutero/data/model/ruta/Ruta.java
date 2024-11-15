@@ -34,7 +34,7 @@ public class Ruta implements Serializable {
         this.pdv_id = pdv_id;
     }
 
-    public int getPdvI() {
+    public int getPdvId() {
         return pdv_id;
     }
 
